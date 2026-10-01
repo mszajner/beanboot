@@ -1,0 +1,9 @@
+io.github.mszajner.beanboot.auditlog.config.BeanbootAuditLogAutoConfiguration
+io.github.mszajner.beanboot.starter.config.BeanbootStarterAutoConfiguration
+io.github.mszajner.beanboot.licence.config.BeanbootLicenceAutoConfiguration
+io.github.mszajner.beanboot.migrations.config.BeanbootMigrationsAutoConfiguration
+io.github.mszajner.beanboot.parameters.config.BeanbootParametersAutoConfiguration
+io.github.mszajner.beanboot.security.config.BeanbootSecurityAutoConfiguration
+io.github.mszajner.beanboot.tasks.config.BeanbootTasksAutoConfiguration
+io.github.mszajner.beanboot.utils.config.BeanbootUtilsAutoConfiguration
+io.github.mszajner.beanboot.scheduler.config.BeanbootSchedulerAutoConfiguration

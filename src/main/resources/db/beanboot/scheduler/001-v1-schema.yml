@@ -1,0 +1,94 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: m.szajner
+      changes:
+        - createTable:
+            tableName: schedulers
+            columns:
+              - column:
+                  name: id
+                  type: UUID
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: last_check_in_at
+                  type: BIGINT
+                  constraints:
+                    nullable: true
+              - column:
+                  name: check_in_interval
+                  type: BIGINT
+                  constraints:
+                    nullable: true
+              - column:
+                  name: created_at
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: updated_at
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+        - createTable:
+            tableName: scheduleds
+            columns:
+              - column:
+                  name: id
+                  type: UUID
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+                    unique: true
+              - column:
+                  name: scheduler_id
+                  type: UUID
+                  constraints:
+                    nullable: true
+                    foreignKeyName: fk_scheduleds_scheduler
+                    references: schedulers(id)
+              - column:
+                  name: run_at
+                  type: BIGINT
+                  constraints:
+                    nullable: true
+              - column:
+                  name: finished_at
+                  type: BIGINT
+                  constraints:
+                    nullable: true
+              - column:
+                  name: version
+                  type: BIGINT
+                  defaultValueNumeric: 0
+                  constraints:
+                    nullable: false
+              - column:
+                  name: created_at
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: updated_at
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+        - createIndex:
+            tableName: scheduleds
+            indexName: idx_scheduleds_name
+            unique: true
+            columns:
+              - column:
+                  name: name

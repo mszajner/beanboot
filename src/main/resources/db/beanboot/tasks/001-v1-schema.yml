@@ -1,0 +1,84 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: m.szajner
+      changes:
+        - createTable:
+            tableName: tasks
+            columns:
+              - column:
+                  name: id
+                  type: UUID
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: order_by
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    nullable: false
+              - column:
+                  name: object_id
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: true
+              - column:
+                  name: action
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: parameters
+                  type: TEXT
+                  constraints:
+                    nullable: true
+              - column:
+                  name: status
+                  type: VARCHAR(50)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: message
+                  type: TEXT
+                  constraints:
+                    nullable: true
+              - column:
+                  name: started_at
+                  type: BIGINT
+                  constraints:
+                    nullable: true
+              - column:
+                  name: finished_at
+                  type: BIGINT
+                  constraints:
+                    nullable: true
+              - column:
+                  name: created_at
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: updated_at
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+        - createIndex:
+            tableName: tasks
+            indexName: idx_tasks_order_by
+            columns:
+              - column:
+                  name: order_by
+  - changeSet:
+      id: 2
+      author: initial
+      changes:
+        - addColumn:
+            tableName: tasks
+            columns:
+              - column:
+                  name: object_name
+                  type: TEXT
+              - column:
+                  name: object_type
+                  type: VARCHAR(255)

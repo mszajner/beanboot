@@ -1,0 +1,30 @@
+beanboot:
+  licence:
+    enabled: true
+  parameters:
+    TOKEN_EXPIRATION: "86400000"
+    TOKEN_PRIVATE_KEY: ""
+    TOKEN_PUBLIC_KEY: ""
+    TOKEN_SECRET_KEY: ""
+    TOKEN_ISSUER: "beanboot-webapp"
+    LICENCE_KEY: ""
+    LICENCE_SECRET: ""
+    LICENCE: ""
+
+spring:
+  data:
+    web:
+      pageable:
+        serialization-mode: via-dto
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show_sql: false
+    open-in-view: false
+
+beanguard:
+  server:
+    url: ''
+  decryptor:
+    publicKey: ''
+    secretKey: ''
