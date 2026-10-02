@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="beanboot">
+<title>beanboot</title>
+<g transform="translate(0 0) scale(1)">
+  <defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2aa468"/><stop offset="1" stop-color="#146b41"/></linearGradient></defs>
+  <rect width="64" height="64" rx="14" fill="url(#bg)"/>
+  <ellipse cx="32" cy="32" rx="24" ry="16.5" transform="rotate(-35 32 32)" fill="#f2fbf5"/>
+  <g fill="none" stroke="#146b41" stroke-width="4" stroke-linecap="round">
+    <path d="M25.6 25.2A9.6 9.6 0 1 0 38.4 25.2"/><path d="M32 22.5V31"/>
+  </g>
+</g>
+</svg>

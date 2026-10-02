@@ -1,4 +1,4 @@
-package io.github.mszajner.beanboot.utils.converters;
+package io.github.mszajner.beanboot.utils.api;
 
 import org.junit.jupiter.api.Test;
 

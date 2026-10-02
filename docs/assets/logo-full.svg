@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 403 72" width="403" height="72" role="img" aria-label="beanboot">
+<title>beanboot</title>
+<g transform="translate(4 4) scale(1)">
+  <defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2aa468"/><stop offset="1" stop-color="#146b41"/></linearGradient></defs>
+  <rect width="64" height="64" rx="14" fill="url(#bg)"/>
+  <ellipse cx="32" cy="32" rx="24" ry="16.5" transform="rotate(-35 32 32)" fill="#f2fbf5"/>
+  <g fill="none" stroke="#146b41" stroke-width="4" stroke-linecap="round">
+    <path d="M25.6 25.2A9.6 9.6 0 1 0 38.4 25.2"/><path d="M32 22.5V31"/>
+  </g>
+</g>
+<g transform="translate(84 -3) scale(1.3)"><g fill="none" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 8V40M2.5 30A10 10 0 1 1 2.5 30.01" stroke="#1b2b24"/><path d="M33.5 30H53.5A10 10 0 1 0 50.0 37.5" stroke="#1b2b24"/><path d="M84.5 20V40M84.5 30A10 10 0 1 0 84.5 30.01" stroke="#1b2b24"/><path d="M95.5 20V40M95.5 30A10 10 0 0 1 115.5 30V40" stroke="#1b2b24"/><path d="M126.5 8V40M126.5 30A10 10 0 1 1 126.5 30.01" stroke="#1f8a56"/><path d="M167.5 20A10 10 0 1 0 167.5 40A10 10 0 1 0 167.5 20Z" stroke="#1f8a56"/><path d="M198.5 20A10 10 0 1 0 198.5 40A10 10 0 1 0 198.5 20Z" stroke="#1f8a56"/><path d="M225.5 10V33Q225.5 40 232.5 40M219.5 20H232.5" stroke="#1f8a56"/></g></g>
+</svg>

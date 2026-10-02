@@ -9,7 +9,7 @@ import org.hibernate.type.descriptor.jdbc.VarcharJdbcType;
 import io.github.mszajner.beanboot.tasks.api.TaskAction;
 import io.github.mszajner.beanboot.tasks.api.TaskObjectType;
 import io.github.mszajner.beanboot.tasks.api.TaskStatus;
-import io.github.mszajner.beanboot.utils.converters.StringMapConverter;
+import io.github.mszajner.beanboot.utils.api.StringMapConverter;
 
 import java.time.Instant;
 import java.util.Map;
