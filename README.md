@@ -1,4 +1,9 @@
-# beanboot
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="docs/assets/logo-full-dark.svg">
+    <img src="docs/assets/logo-full.svg" alt="beanboot" height="72">
+  </picture>
+</p>
 
 [![Build](https://github.com/mszajner/beanboot/actions/workflows/build.yml/badge.svg)](https://github.com/mszajner/beanboot/actions/workflows/build.yml)
 
