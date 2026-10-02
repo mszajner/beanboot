@@ -49,6 +49,7 @@
         <springdoc-openapi-starter-webmvc-ui.version>3.0.2</springdoc-openapi-starter-webmvc-ui.version>
         <commons-lang3.version>3.19.0</commons-lang3.version>
         <beanguard-client.version>0.1.3</beanguard-client.version>
+        <spring-modulith.version>2.1.1</spring-modulith.version>
     </properties>
 
     <scm>
@@ -166,6 +167,18 @@
             <groupId>org.testcontainers</groupId>
             <artifactId>testcontainers-spock</artifactId>
             <version>${testcontainers.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.modulith</groupId>
+            <artifactId>spring-modulith-api</artifactId>
+            <version>${spring-modulith.version}</version>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.modulith</groupId>
+            <artifactId>spring-modulith-core</artifactId>
+            <version>${spring-modulith.version}</version>
             <scope>test</scope>
         </dependency>
     </dependencies>

@@ -1,4 +1,4 @@
-package io.github.mszajner.beanboot.utils.converters;
+package io.github.mszajner.beanboot.utils.api;
 
 import jakarta.persistence.AttributeConverter;
 import jakarta.persistence.Converter;

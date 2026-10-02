@@ -15,7 +15,7 @@ import io.github.mszajner.beanboot.auditlog.api.*;
 import io.github.mszajner.beanboot.auditlog.entities.AuditLogEntity;
 import io.github.mszajner.beanboot.auditlog.mappers.AuditLogMapper;
 import io.github.mszajner.beanboot.auditlog.repositories.AuditLogRepository;
-import io.github.mszajner.beanboot.security.api.ExtendedUserDetails;
+import io.github.mszajner.beanboot.auditlog.api.AuditActor;
 
 import java.util.Map;
 import java.util.Objects;
@@ -105,7 +105,7 @@ public class AuditLogServiceImpl implements AuditLogService {
         if (auth == null || !auth.isAuthenticated()) {
             return null;
         }
-        if (auth.getDetails() instanceof ExtendedUserDetails userDetails) {
+        if (auth.getDetails() instanceof AuditActor userDetails) {
             return userDetails.getName();
         }
         if (auth.getDetails() instanceof UserDetails userDetails) {

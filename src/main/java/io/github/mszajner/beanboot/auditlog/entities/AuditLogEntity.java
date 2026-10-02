@@ -7,7 +7,7 @@ import org.hibernate.annotations.JdbcType;
 import org.hibernate.type.descriptor.jdbc.VarcharJdbcType;
 import io.github.mszajner.beanboot.auditlog.api.AuditLogAction;
 import io.github.mszajner.beanboot.auditlog.api.AuditLogObjectType;
-import io.github.mszajner.beanboot.utils.converters.StringMapConverter;
+import io.github.mszajner.beanboot.utils.api.StringMapConverter;
 
 import java.time.Instant;
 import java.util.Map;

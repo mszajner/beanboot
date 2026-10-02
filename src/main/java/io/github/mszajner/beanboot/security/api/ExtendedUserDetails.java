@@ -1,5 +1,6 @@
 package io.github.mszajner.beanboot.security.api;
 
-public interface ExtendedUserDetails {
-    String getName();
+import io.github.mszajner.beanboot.auditlog.api.AuditActor;
+
+public interface ExtendedUserDetails extends AuditActor {
 }
