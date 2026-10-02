@@ -116,7 +116,11 @@ current tests are plain JUnit 5 + Mockito (`*Test.java`).
 Follow the existing module shape: `api/` (public interfaces + annotations consumers implement or use), `config/`
 (one `Beanboot<Name>AutoConfiguration` with `@ComponentScan`/`@EntityScan` scoped to the module package), plus
 `entities/`, `repositories/`, `services/`, `controllers/`/`converters`/`mappers` as needed. Register the new
-`@AutoConfiguration` class in `AutoConfiguration.imports`. If it needs its own schema, add a Liquibase changelog
+`@AutoConfiguration` class in `AutoConfiguration.imports`. Module boundaries are enforced by Spring Modulith (`ModuleStructureTest`, `ApplicationModules.verify()`): put the
+public types in `api/` with a `package-info.java` annotated `@NamedInterface("api")`, and declare the module's
+dependencies in a root `package-info.java` via `@ApplicationModule(allowedDependencies = {"other::api", ...})`. Any new
+cross-module dependency must be added there, otherwise the test fails; cycles between modules are not allowed. If it
+needs its own schema, add a Liquibase changelog
 under `src/main/resources/db/beanboot/<module>/` and include it from `db/changelog.yml`. If the module introduces
 an app-specific extension point, add the `*Registry` interface pattern described above rather than hardcoding enum
 values, and update the `webapp` test app to implement it so the module is exercised end-to-end.

@@ -5,7 +5,7 @@ import lombok.Getter;
 import lombok.Setter;
 import io.github.mszajner.beanboot.auditlog.api.AuditableObject;
 import io.github.mszajner.beanboot.security.api.Role;
-import io.github.mszajner.beanboot.security.converters.RoleSetConverter;
+import io.github.mszajner.beanboot.security.api.RoleSetConverter;
 import io.github.mszajner.beanboot.starter.models.AuditLogObjectType;
 
 import java.time.Instant;

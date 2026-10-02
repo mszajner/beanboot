@@ -1,11 +1,9 @@
-package io.github.mszajner.beanboot.security.converters;
+package io.github.mszajner.beanboot.security.api;
 
 import jakarta.persistence.AttributeConverter;
 import jakarta.persistence.Converter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
-import io.github.mszajner.beanboot.security.api.Role;
-import io.github.mszajner.beanboot.security.api.RoleRegistry;
 import tools.jackson.core.type.TypeReference;
 import tools.jackson.databind.ObjectMapper;
 
