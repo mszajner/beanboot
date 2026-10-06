@@ -14,7 +14,7 @@ import org.testcontainers.containers.JdbcDatabaseContainer;
 import org.testcontainers.containers.PostgreSQLContainer;
 
 @OpenAPIDefinition(info = @Info(
-        title = "Framework API",
+        title = "BeanBoot API",
         version = "1.0",
         description = "API for managing users, groups, and roles."),
         security = @SecurityRequirement(name = "bearerAuth"))

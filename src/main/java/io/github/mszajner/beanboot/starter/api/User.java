@@ -1,5 +1,6 @@
 package io.github.mszajner.beanboot.starter.api;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
@@ -25,16 +26,19 @@ public class User implements io.github.mszajner.beanboot.security.api.User {
     private Instant updatedAt;
 
     @Override
+    @JsonIgnore
     public String getAuditLogObjectId() {
         return id.toString();
     }
 
     @Override
+    @JsonIgnore
     public String getAuditLogObjectName() {
         return firstName + " " + lastName;
     }
 
     @Override
+    @JsonIgnore
     public io.github.mszajner.beanboot.auditlog.api.AuditLogObjectType getAuditLogObjectType() {
         return AuditLogObjectType.USER;
     }
