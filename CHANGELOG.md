@@ -8,6 +8,8 @@ breaking changes.
 
 ## [Unreleased]
 
+## [0.1.1] - 2026-10-06
+
 ### Changed
 - Dependency updates (Spring Boot 4.1.1, springdoc-openapi, commons-lang3, maven-source-plugin).
 
@@ -18,5 +20,6 @@ breaking changes.
   tasks, distributed scheduler, dynamic parameters, data migrations and an optional BeanGuard licence module.
 - The licence module is opt-in: set `beanboot.licence.enabled=true` to enable it.
 
-[Unreleased]: https://github.com/mszajner/beanboot/compare/v0.1.0...HEAD
+[Unreleased]: https://github.com/mszajner/beanboot/compare/v0.1.1...HEAD
+[0.1.1]: https://github.com/mszajner/beanboot/compare/v0.1.0...v0.1.1
 [0.1.0]: https://github.com/mszajner/beanboot/releases/tag/v0.1.0
