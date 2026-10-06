@@ -95,7 +95,8 @@ mvn package -DskipTests
 Release (CI only): push a `v<version>` tag whose version matches `pom.xml` (not a SNAPSHOT); the GitHub Actions
 workflow `.github/workflows/release.yml` builds, signs (GPG) and uploads to Maven Central with
 `mvn -Prelease deploy`. The upload is not auto-published — approve it in the Central Portal. To check the release
-artifacts locally without signing: `mvn -Prelease -Dgpg.skip=true clean package`.
+artifacts locally without signing: `mvn -Prelease -Dgpg.skip=true clean package`. Full procedure (including
+`CHANGELOG.md`): see "Releasing a new version" below.
 
 Tests matched by Surefire follow `**/*Test.*` and `**/*AcceptanceSpec.*` (see `pom.xml`); Spock (`spock-core`,
 `gmavenplus-plugin`) is on the test classpath for `*Spec` groovy specs, but none currently exist in this repo — all
@@ -110,6 +111,36 @@ current tests are plain JUnit 5 + Mockito (`*Test.java`).
 - `*MvcTest` classes exercise the web layer (`MockMvc`) separately from `*Test` classes that test the
   service/controller logic directly — see the `licence.controllers` package for the paired pattern
   (`LicenceControllerTest` vs `LicenceControllerMvcTest`).
+
+## Releasing a new version
+
+Versioning follows [SemVer](https://semver.org/); while the version is `0.x`, minor bumps may be breaking. The
+`pom.xml` version on `main` is normally `<next>-SNAPSHOT`; the tag `v<version>` is what triggers the release. Git
+remote is called `github` (not `origin`). Do not push, tag, or publish without the user's explicit confirmation.
+
+Steps (let `X.Y.Z` be the version being released):
+
+1. Make sure you are on an up-to-date `main` with a clean working tree and `mvn test` is green.
+2. Update `CHANGELOG.md` ([Keep a Changelog](https://keepachangelog.com/en/1.1.0/) format):
+   - Review what changed since the previous tag: `git log --oneline vPREV..HEAD`.
+   - Make sure `## [Unreleased]` lists user-visible changes grouped under `### Added` / `Changed` / `Deprecated` /
+     `Removed` / `Fixed` / `Security`. Call out breaking changes explicitly.
+   - Rename `## [Unreleased]` to `## [X.Y.Z] - YYYY-MM-DD` and add a fresh empty `## [Unreleased]` above it.
+3. Set the release version in `pom.xml` (drop `-SNAPSHOT`), e.g. `mvn versions:set -DnewVersion=X.Y.Z
+   -DgenerateBackupPoms=false`. Pre-releases use a suffix like `X.Y.Z-rc1` (the workflow marks tags containing `-`
+   as GitHub pre-releases).
+4. Verify the artifacts locally (no signing): `mvn -Prelease -Dgpg.skip=true clean package`.
+5. Commit: `git commit -am "Release X.Y.Z"`.
+6. Tag and push (this starts the CI release): `git tag vX.Y.Z && git push github main vX.Y.Z`.
+7. CI (`.github/workflows/release.yml`) checks tag == `pom.xml` version and not SNAPSHOT, then builds, signs and
+   uploads to Maven Central, and creates the GitHub release (`--generate-notes`). Optionally paste the CHANGELOG
+   section into the GitHub release notes.
+8. Approve the upload manually in the Central Portal (it is not auto-published).
+9. Start the next cycle: set `pom.xml` to the next `-SNAPSHOT` (`mvn versions:set -DnewVersion=X.Y.(Z+1)-SNAPSHOT
+   -DgenerateBackupPoms=false`), commit `Prepare next development iteration`, and push `main`.
+
+If the tag/version check fails, delete the tag (`git tag -d vX.Y.Z && git push github :refs/tags/vX.Y.Z`), fix
+`pom.xml`, and re-tag. A version already published to Maven Central cannot be overwritten — bump the version instead.
 
 ## Adding a new module
 
