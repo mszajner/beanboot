@@ -139,6 +139,11 @@ Steps (let `X.Y.Z` be the version being released):
 9. Start the next cycle: set `pom.xml` to the next `-SNAPSHOT` (`mvn versions:set -DnewVersion=X.Y.(Z+1)-SNAPSHOT
    -DgenerateBackupPoms=false`), commit `Prepare next development iteration`, and push `main`.
 
+The release workflow runs Maven through the Maven Wrapper (`./mvnw`, pinned to 3.9.12) on purpose: with the
+runner's newer default Maven (3.10.0) `central-publishing-maven-plugin` 0.11.0 staged a broken bundle and Central
+rejected it ("Bundle has content that does NOT have a .pom file"). Do not switch the workflow back to plain `mvn`
+without verifying a release with the new Maven version.
+
 If the tag/version check fails, delete the tag (`git tag -d vX.Y.Z && git push github :refs/tags/vX.Y.Z`), fix
 `pom.xml`, and re-tag. A version already published to Maven Central cannot be overwritten — bump the version instead.
 

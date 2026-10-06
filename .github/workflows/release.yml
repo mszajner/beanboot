@@ -29,7 +29,7 @@ jobs:
 
       - name: Check that the tag matches the project version
         run: |
-          version="$(mvn --batch-mode --quiet -DforceStdout help:evaluate -Dexpression=project.version)"
+          version="$(./mvnw --batch-mode --quiet -DforceStdout help:evaluate -Dexpression=project.version)"
           if [ "v${version}" != "${GITHUB_REF_NAME}" ]; then
             echo "Tag ${GITHUB_REF_NAME} does not match pom.xml version ${version}" >&2
             exit 1
@@ -39,7 +39,7 @@ jobs:
           esac
 
       - name: Build, sign and upload to Maven Central
-        run: mvn --batch-mode --errors --show-version -Prelease deploy
+        run: ./mvnw --batch-mode --errors --show-version -Prelease deploy
         env:
           CENTRAL_USERNAME: ${{ secrets.CENTRAL_USERNAME }}
           CENTRAL_PASSWORD: ${{ secrets.CENTRAL_PASSWORD }}

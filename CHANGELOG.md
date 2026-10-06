@@ -12,6 +12,7 @@ breaking changes.
 
 ### Changed
 - Dependency updates (Spring Boot 4.1.1, springdoc-openapi, commons-lang3, maven-source-plugin).
+- The release workflow now builds with the Maven Wrapper (Maven 3.9.12) to get a valid Maven Central bundle.
 
 ## [0.1.0] - 2026-10-02
 
