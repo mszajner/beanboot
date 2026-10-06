@@ -6,6 +6,10 @@
 </p>
 
 [![Build](https://github.com/mszajner/beanboot/actions/workflows/build.yml/badge.svg)](https://github.com/mszajner/beanboot/actions/workflows/build.yml)
+[![Maven Central](https://img.shields.io/maven-central/v/io.github.mszajner.beanboot/beanboot)](https://central.sonatype.com/artifact/io.github.mszajner.beanboot/beanboot)
+[![GitHub release](https://img.shields.io/github/v/release/mszajner/beanboot)](https://github.com/mszajner/beanboot/releases/latest)
+[![License](https://img.shields.io/github/license/mszajner/beanboot)](LICENSE)
+[![Java 21](https://img.shields.io/badge/Java-21-blue)](https://adoptium.net/)
 
 A Spring Boot **auto-configuration library** that gives your application a ready-made foundation, so you can start
 on the domain logic instead of re-implementing the same plumbing every time:

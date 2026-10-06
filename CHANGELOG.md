@@ -8,6 +8,9 @@ breaking changes.
 
 ## [Unreleased]
 
+### Changed
+- README: added Maven Central, GitHub release, license and Java version badges.
+
 ## [0.1.1] - 2026-10-06
 
 ### Changed
