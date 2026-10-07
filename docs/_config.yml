@@ -1,0 +1,37 @@
+title: beanboot
+description: A Spring Boot auto-configuration library that gives your application users, JWT security, audit log, tasks, scheduling, parameters and migrations out of the box.
+url: https://mszajner.github.io
+baseurl: /beanboot
+
+# Theme: https://just-the-docs.com (supported on GitHub Pages through jekyll-remote-theme)
+remote_theme: just-the-docs/just-the-docs
+
+logo: /assets/logo-full.svg
+favicon_ico: /assets/favicon.ico
+
+search_enabled: true
+heading_anchors: true
+back_to_top: true
+back_to_top_text: "Back to top"
+
+aux_links:
+  "GitHub":
+    - "https://github.com/mszajner/beanboot"
+  "Maven Central":
+    - "https://central.sonatype.com/artifact/io.github.mszajner.beanboot/beanboot"
+
+footer_content: "Copyright &copy; 2026 Mirosław Szajner. Distributed under the <a href=\"https://github.com/mszajner/beanboot/blob/main/LICENSE\">Apache License 2.0</a>."
+
+callouts:
+  warning:
+    title: Warning
+    color: red
+  note:
+    title: Note
+    color: blue
+  tip:
+    title: Tip
+    color: green
+  gotcha:
+    title: Watch out
+    color: yellow
