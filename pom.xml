@@ -11,7 +11,7 @@
 
     <groupId>io.github.mszajner.beanboot</groupId>
     <artifactId>beanboot</artifactId>
-    <version>0.1.2-SNAPSHOT</version>
+    <version>0.1.2</version>
 
     <name>beanboot</name>
     <description>Spring Boot auto-configuration library: users and groups, JWT auth with role-based authorization,

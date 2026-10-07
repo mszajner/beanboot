@@ -8,6 +8,8 @@ breaking changes.
 
 ## [Unreleased]
 
+## [0.1.2] - 2026-10-07
+
 ### Changed
 - The starter's built-in `AuditLogActionRegistry` and `AuditLogObjectTypeRegistry` are now registered as
   `@ConditionalOnMissingBean` defaults, so an application can supply its own registries to extend the audit log
@@ -30,6 +32,7 @@ breaking changes.
   tasks, distributed scheduler, dynamic parameters, data migrations and an optional BeanGuard licence module.
 - The licence module is opt-in: set `beanboot.licence.enabled=true` to enable it.
 
-[Unreleased]: https://github.com/mszajner/beanboot/compare/v0.1.1...HEAD
+[Unreleased]: https://github.com/mszajner/beanboot/compare/v0.1.2...HEAD
+[0.1.2]: https://github.com/mszajner/beanboot/compare/v0.1.1...v0.1.2
 [0.1.1]: https://github.com/mszajner/beanboot/compare/v0.1.0...v0.1.1
 [0.1.0]: https://github.com/mszajner/beanboot/releases/tag/v0.1.0
