@@ -82,3 +82,13 @@ databaseChangeLog:
               - column:
                   name: object_type
                   type: VARCHAR(255)
+  - changeSet:
+      id: 3
+      author: beanboot
+      changes:
+        - addColumn:
+            tableName: tasks
+            columns:
+              - column:
+                  name: heartbeat_at
+                  type: BIGINT

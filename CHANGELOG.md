@@ -8,7 +8,22 @@ breaking changes.
 
 ## [Unreleased]
 
+### Added
+- `beanboot.tasks.heartbeat-interval` (default `30s`) controls the task heartbeat.
+
+### Changed
+- Crash recovery of tasks is no longer immediate: after an instance dies, its `RUNNING` tasks return to `PENDING` once
+  their heartbeat has been silent for three heartbeat intervals (at startup, tasks that were `RUNNING` without any
+  heartbeat — for example rows created before this change — are reset immediately).
+
 ### Fixed
+- Tasks are now safe to run on several instances: a task is claimed with an atomic conditional update before it is
+  executed, so it can no longer run on more than one instance at the same time. Previously every instance executed "the
+  oldest `PENDING` task" without claiming it.
+- Starting an instance no longer resets `RUNNING` tasks that belong to other, healthy instances. A running task now
+  refreshes a heartbeat (`tasks.heartbeat_at`, new column added by Liquibase); only tasks whose heartbeat stopped
+  (default: 3 × 30 s) are returned to `PENDING`.
+- The task dispatcher now executes all pending tasks in one run instead of one task per wake-up.
 - The scheduler heartbeat now honours `beanboot.scheduler.check-in-interval`; it used to read the non-existent
   property `framework.scheduler.check-in-interval`, so the heartbeat always ran every 30 s regardless of the setting.
 

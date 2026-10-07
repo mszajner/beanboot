@@ -60,6 +60,9 @@ public class TaskEntity {
     @Column(name = "finished_at")
     private Instant finishedAt;
 
+    @Column(name = "heartbeat_at")
+    private Instant heartbeatAt;
+
     @Column(name = "created_at", updatable = false)
     private Instant createdAt;
 

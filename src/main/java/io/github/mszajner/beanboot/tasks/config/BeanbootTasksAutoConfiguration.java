@@ -6,6 +6,7 @@ import org.springframework.boot.autoconfigure.AutoConfiguration;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.persistence.autoconfigure.EntityScan;
 import org.springframework.context.ApplicationEventPublisher;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
@@ -27,6 +28,7 @@ import java.util.List;
         "io.github.mszajner.beanboot.tasks.converters"
 })
 @EnableScheduling
+@EnableConfigurationProperties(TaskProperties.class)
 public class BeanbootTasksAutoConfiguration {
 
     @Bean
