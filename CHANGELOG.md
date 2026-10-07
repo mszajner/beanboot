@@ -9,6 +9,9 @@ breaking changes.
 ## [Unreleased]
 
 ### Changed
+- The starter's built-in `AuditLogActionRegistry` and `AuditLogObjectTypeRegistry` are now registered as
+  `@ConditionalOnMissingBean` defaults, so an application can supply its own registries to extend the audit log
+  actions and object types without a bean conflict.
 - **Breaking:** `BeanbootLicenceConfiguration` gained `getServerUrl()`, `getDecryptorPublicKey()` and
   `getDecryptorSecretKey()`. The BeanGuard server config is no longer read from the `beanguard.server.url` /
   `beanguard.decryptor.*` properties by the library; the consuming application supplies it through this interface.
