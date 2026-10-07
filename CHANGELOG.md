@@ -9,6 +9,9 @@ breaking changes.
 ## [Unreleased]
 
 ### Changed
+- **Breaking:** `BeanbootLicenceConfiguration` gained `getServerUrl()`, `getDecryptorPublicKey()` and
+  `getDecryptorSecretKey()`. The BeanGuard server config is no longer read from the `beanguard.server.url` /
+  `beanguard.decryptor.*` properties by the library; the consuming application supplies it through this interface.
 - README: added Maven Central, GitHub release, license and Java version badges.
 
 ## [0.1.1] - 2026-10-06

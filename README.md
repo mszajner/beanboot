@@ -140,17 +140,12 @@ Enable it with:
 beanboot:
   licence:
     enabled: true
-
-beanguard:
-  server:
-    url: https://your-beanguard-server
-  decryptor:
-    publicKey: ...
-    secretKey: ...
 ```
 
-You also provide a bean implementing `io.github.mszajner.beanboot.licence.api.BeanbootLicenceConfiguration`
-(the names of the parameters that store the license key, secret and license). When enabled:
+You also provide a bean implementing `io.github.mszajner.beanboot.licence.api.BeanbootLicenceConfiguration`:
+the names of the parameters that store the license key, secret and license, plus the BeanGuard server URL and
+decryptor public/secret keys (`getServerUrl()`, `getDecryptorPublicKey()`, `getDecryptorSecretKey()`) — read them
+from wherever suits your app (properties, environment, a secret store). When enabled:
 
 - requests to `/api/**` and `/auth/**` (except `/api/licence/**`) are rejected with `402 Payment Required` unless a
   valid license is loaded;

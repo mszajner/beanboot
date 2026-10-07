@@ -4,7 +4,6 @@ import dev.beanguard.client.config.BeanGuardConfiguration;
 import dev.beanguard.client.config.LicenceKeys;
 import dev.beanguard.client.config.ServerConfig;
 import org.apache.commons.lang3.StringUtils;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import io.github.mszajner.beanboot.licence.api.BeanbootLicenceConfiguration;
 import io.github.mszajner.beanboot.parameters.api.ParameterService;
@@ -16,21 +15,18 @@ public class BeanbootBeanGuardConfiguration implements BeanGuardConfiguration {
 
     private final ParameterService parameterService;
     private final BeanbootLicenceConfiguration licenceConfiguration;
-    private final ServerConfig serverConfig;
 
     public BeanbootBeanGuardConfiguration(ParameterService parameterService,
-                                          BeanbootLicenceConfiguration licenceConfiguration,
-                                          @Value("${beanguard.server.url:}") String url,
-                                          @Value("${beanguard.decryptor.publicKey:}") String key,
-                                          @Value("${beanguard.decryptor.secretKey:}") String secret) {
+                                          BeanbootLicenceConfiguration licenceConfiguration) {
         this.parameterService = parameterService;
         this.licenceConfiguration = licenceConfiguration;
-        this.serverConfig = new ServerConfig(url, key, secret);
     }
 
     @Override
     public ServerConfig getServerConfig() {
-        return serverConfig;
+        return new ServerConfig(licenceConfiguration.getServerUrl(),
+                licenceConfiguration.getDecryptorPublicKey(),
+                licenceConfiguration.getDecryptorSecretKey());
     }
 
     @Override

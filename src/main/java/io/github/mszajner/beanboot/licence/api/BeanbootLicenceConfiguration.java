@@ -8,4 +8,10 @@ public interface BeanbootLicenceConfiguration {
     ParameterName getLicenceKeyParameterName();
 
     ParameterName getLicenceSecretParameterName();
+
+    String getServerUrl();
+
+    String getDecryptorPublicKey();
+
+    String getDecryptorSecretKey();
 }

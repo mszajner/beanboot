@@ -33,8 +33,10 @@ class BeanbootBeanGuardConfigurationTest {
         when(licenceConfiguration.getLicenceKeyParameterName()).thenReturn(KEY_PARAM);
         when(licenceConfiguration.getLicenceSecretParameterName()).thenReturn(SECRET_PARAM);
         when(licenceConfiguration.getLicenceParameterName()).thenReturn(LICENCE_PARAM);
-        configuration = new BeanbootBeanGuardConfiguration(parameterService, licenceConfiguration,
-                "https://server", "public", "private");
+        when(licenceConfiguration.getServerUrl()).thenReturn("https://server");
+        when(licenceConfiguration.getDecryptorPublicKey()).thenReturn("public");
+        when(licenceConfiguration.getDecryptorSecretKey()).thenReturn("private");
+        configuration = new BeanbootBeanGuardConfiguration(parameterService, licenceConfiguration);
     }
 
     @Test
