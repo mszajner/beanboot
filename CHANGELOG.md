@@ -8,6 +8,10 @@ breaking changes.
 
 ## [Unreleased]
 
+### Fixed
+- The scheduler heartbeat now honours `beanboot.scheduler.check-in-interval`; it used to read the non-existent
+  property `framework.scheduler.check-in-interval`, so the heartbeat always ran every 30 s regardless of the setting.
+
 ## [0.1.2] - 2026-10-07
 
 ### Changed

@@ -15,7 +15,7 @@ public class InstanceHeartbeatService {
     private final SchedulerRepository schedulerRepository;
     private final InstanceRegistrarService instanceRegistrarService;
 
-    @Scheduled(fixedDelayString = "${framework.scheduler.check-in-interval:PT30S}")
+    @Scheduled(fixedDelayString = "${beanboot.scheduler.check-in-interval:PT30S}")
     public void heartbeat() {
         var instance = instanceRegistrarService.getCurrentInstance();
         if (Objects.nonNull(instance)) {
