@@ -22,6 +22,9 @@ on the domain logic instead of re-implementing the same plumbing every time:
 - data migrations (separate from Liquibase schema migrations),
 - optional license enforcement through [BeanGuard](https://github.com/mszajner/beanguard).
 
+📖 **Documentation: <https://mszajner.github.io/beanboot/>** — getting started, configuration reference, extension points,
+REST API and known issues.
+
 > **Status: pre-release (`0.x`).** The API may change between minor versions. See [CHANGELOG.md](CHANGELOG.md).
 
 ## Requirements
